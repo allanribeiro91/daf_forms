@@ -1,0 +1,88 @@
+body {
+    background-image: linear-gradient(to bottom, #257eb5, #010d40);
+}
+
+
+.full-width {
+    flex-grow: 2;  /* Cresce para ocupar o espaço disponível */
+    margin-right: 5px;
+}
+
+.formulario {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    border: solid 1px gray;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.assinatura-ms {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.logo-qualifarsus {
+    text-align: center;
+    
+}
+
+
+
+.assinatura-ms img {
+    height: 5vh;
+}
+
+.qualifarsus {
+    text-align: center;
+}
+
+.titulo-formulario {
+    text-align: center;
+    width: 30vw;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 10px;
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.informacoes {
+    text-align: justify;
+}
+
+
+.formulario-secao {
+    margin-bottom: 2vh;
+}
+
+.titulo-secao {
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.titulo-subsecao {
+    padding-top: 1vh;
+    padding-left: 10px;
+    margin-bottom: 2px;
+}
+
+.perguntas {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+[readonly] {
+    background-color: rgb(215, 215, 215);
+}
+
+

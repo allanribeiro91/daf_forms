@@ -1,0 +1,15 @@
+.lista__vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    width: 100%;
+  }
+  
+  .lista__titulo {
+    font-size: 1.2em;
+    text-align: left;
+    align-self: flex-start;
+    font-weight: bold;
+  }

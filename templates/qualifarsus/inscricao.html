@@ -1,0 +1,288 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualifarSUS</title>
+    
+    
+    <!-- CSS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+
+
+    <!-- Adicionando jQuery via CDN -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <!-- CSS Componentes -->
+    <link rel="stylesheet" href="{% static 'styles/shared/botoes.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/shared/cards.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/shared/lista_vertical.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/shared/tabela.css' %}">
+
+
+    <link rel="stylesheet" href="{% static '\styles\qualifarsus\inscricao.css' %}">
+</head>
+<body>
+    
+    <div class="container formulario">
+        
+        <section class="assinatura-ms">
+            <img src="{% static '\assets\marca_MS.png' %}" alt="Marca do Ministério da Saúde">
+        </section>
+
+        <section class="logo-qualifarsus">
+            <img src="{% static '\assets\qualifarsus\qualifarsus.png' %}" alt="Marca do Ministério da Saúde">
+        </section>
+
+        <section class="info__formulario">
+            <h1>Seleção de Novos Municípios - 2024</h1>
+            <div class="informacoes" style="text-align: justify;">
+                <p>
+                    O Departamento de Assistência Farmacêutica e Insumos Estratégicos (DAF/SECTICS/MS), da Secretaria de Ciência, Tecnologia, Inovação e Complexo da Saúde (SECTICS), do Ministério da Saúde (MS), por meio da Portaria GM/MS nº 1.927, de 22 de novembro de 2023, que dispõe sobre a transferência dos recursos destinados ao Eixo Estrutura do Programa Nacional de Qualificação da Assistência Farmacêutica - Qualifar-SUS aos municípios com Índice de Desenvolvimento Humano Municipal - IDHM baixo e médio, no âmbito do Sistema Único de Saúde - SUS, para o ano de 2023, disponibiliza o preenchimento deste formulário de inscrição como parte da seleção dos municípios elegíveis no âmbito do Programa, para fins de recebimento do incentivo financeiro de custeio e investimento.
+                </p>
+                
+                <p>
+                    Acesse aqui a lista de municípios elegíveis:
+                    <a href="https://www.gov.br/saude/pt-br/acesso-a-informacao/participacao-social/chamamentos-publicos/2023/chamamento-publico-sectics-ms-no-1927-de-22-de-novembro-de-2023/municipios-elegiveis.pdf" target="_blank">clique aqui</a>
+                </p>
+                
+                <p>
+                    Acesse aqui a Portaria GM/MS nº 1.927, de 22 de novembro de 2023:
+                    <a href="https://www.in.gov.br/en/web/dou/-/portaria-gm/ms-n-1.927-de-22-de-novembro-de-2023-524895932">clique aqui</a>
+                </p>
+
+                
+            </div>
+        </section>
+
+
+        <!-- Selecione o Município -->
+        <div class="subsecao">
+
+            <div class="titulo-secao">
+                Selecione o Município
+            </div>
+
+            <div class="perguntas" style="margin-top: 15px;">
+                <!-- UF -->
+                <div class="form-floating mb-3">
+                    <select id="uf" name="uf" class="form-select">
+                        <option value=""></option>
+                        {% for uf in lista_ufs %}
+                            <option value="{{ uf }}">{{ uf }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="uf">UF</label>
+                </div>
+                
+                <!-- Município -->
+                <div class="form-floating mb-3 full-width">
+                    <select id="municipio" name="municipio" class="form-select" disabled>
+                        <option value=""></option>
+                    </select>
+                    <label for="municipio">Município</label>
+                </div>
+
+                <!-- Código IBGE -->
+                <div class="form-floating mb-3" style="width: 100px;">
+                    <input type="text" id="cod_ibge" name="cod_ibge" class="form-control" disabled>
+                    <label>COD IBGE</label>
+                </div>
+
+                <!-- IDHM - 2010 -->
+                <div class="form-floating mb-3">
+                    <input type="text" id="categoria" name="uf" class="form-control" disabled>
+                    <label>IDHM - 2010</label>
+                </div>
+
+                <!-- Porte Populacional -->
+                <div class="form-floating mb-3">
+                    <input type="text" id="categoria" name="uf" class="form-control" disabled>
+                    <label>Porte Populacional</label>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form class="formulario-dados">
+            
+            <div class="formulario-secao">
+                
+                <div class="titulo-secao">
+                    Dados da Secretaria Municipal
+                </div>
+                
+                <!-- Secretário Municipal de Saúde -->
+                <div class="subsecao">
+                    <div class="titulo-subsecao">
+                        Secretário(a) Municipal de Saúde
+                    </div>
+                    <div class="perguntas">
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Nome completo</strong></label>
+                        </div>
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Email institucional</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Telefone</label>
+                        </div>   
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Celular</label>
+                        </div>  
+                    </div>
+                </div>
+
+                <!-- Responsável Assistência Farmacêutica -->
+                <div class="subsecao">
+                    <div class="titulo-subsecao">
+                        Responsável pela Assistência Farmacêutica
+                    </div>
+                    <div class="perguntas">
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Nome completo</strong></label>
+                        </div>
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Email institucional</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Telefone</label>
+                        </div>   
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Celular</label>
+                        </div>  
+                    </div>
+                </div>
+
+                <!-- Responsável pela Solicitação -->
+                <div class="subsecao">
+                    <div class="titulo-subsecao">
+                        Responsável pela Solicitação
+                    </div>
+                    <div class="perguntas">
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-select" >
+                            <label>Solicitante</strong></label>
+                        </div>
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Nome completo</strong></label>
+                        </div>
+                        <div class="form-floating mb-3 full-width">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Email institucional</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Telefone</label>
+                        </div>   
+                        <div class="form-floating mb-3">
+                            <input type="text" id="categoria" name="uf" class="form-control" >
+                            <label>Celular</label>
+                        </div>  
+                    </div>
+                </div>
+            
+            </div>
+
+            <!-- Equipamentos e Materiais Permanentes -->
+            <div class="formulario-secao">
+
+                <!-- Título -->
+                <div class="titulo-secao">Equipamentos e Materiais Permanentes</div>
+
+                <!-- Área Botões -->
+                <div class="area_botoes" style="justify-content: flex-end; padding-right: 10px; margin-bottom: 0px;">
+
+                    <!-- Add -->
+                    <div class="botao_padrao">
+                        <i class="material-symbols-outlined" id="addEquipamento" style="font-size: 1.5vw; vertical-align: middle; color: black">add_circle</i>Adicionar
+                    </div>
+
+                </div>
+
+                <!-- Lista -->
+                <div class="lista__vertical" >
+
+                        <!-- Tabela -->
+                        <div class="section__tabela">
+                            <table class="table table-striped table-hover fixed-size-table" style="font-size: 14px;" id="tabEmpenhos">
+                                <thead>
+                                    <tr>
+                                        <th class="col__texto4">ID</th>
+                                        <th class="col__texto25">Equipamento</th>
+                                        <th class="col__valor15">Valor Unitário R$</th>
+                                        <th class="col__valor8">Quantidade</th>
+                                        <th class="col__valor15">Valor Total R$</th>                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col__texto4">1</th>
+                                        <td class="col__texto25">Equipamento</th>
+                                        <td class="col__valor15">Valor Unitário R$</th>
+                                        <td class="col__valor8">Quantidade</th>
+                                        <td class="col__valor15">Valor Total R$</th>                    
+                                    </tr>
+                                </tbody>
+                            </table>  
+                        </div>
+    
+                    
+
+                </div>
+
+
+                
+                    
+
+            </div>
+
+            
+            <div class="formulario-secao">
+                <div class="titulo-secao">Observações</div>
+                <div class="form-floating mb-3" style="margin-top: 15px;">
+                    <input type="text-area" id="categoria" name="uf" class="form-control" >
+                    <label>Observações</strong></label>
+                </div>
+            </div>
+        </form>
+
+
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <div class="botao_padrao" style="background-color: #257eb5; color:white; width: 20%; font-weight: bold; font-size: 16px;">
+                Enviar Inscrição
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+    <!-- Scritps -->
+    <script src="{% static 'js/qualifarsus/inscricao.js' %}"></script>
+    <script type="module" src="{% static 'js/qualifarsus/_qualifarsus.js' %}"></script>
+
+    <!-- Modais -->
+    {% include "qualifarsus\equipamento_modal.html" %}
+
+</body>
+</html>
