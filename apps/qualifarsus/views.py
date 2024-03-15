@@ -14,7 +14,6 @@ def qualifarsus_inscricao(request):
 def qualifarsus_buscar_municipios(request, uf=None):
     lista_municipios = Municipios_Elegiveis.objects.filter(uf=uf).values_list('municipio', flat=True).order_by('municipio')
     municipios = list(lista_municipios.values('cod_ibge', 'municipio'))
-    print(municipios)
     return JsonResponse({'municipios': municipios})
 
 

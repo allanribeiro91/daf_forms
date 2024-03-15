@@ -1,0 +1,15 @@
+VERSÃO 1.0 DE FORMULÁRIO DE INSCRIÇÃO
+1. INSCRIÇÃO
+    1.1. Formulário de inscrição
+    1.2. Encaminhar email com confirmação da inscrição
+    1.3. Gerar um PDF com a inscrição
+
+2. GESTÃO DAS INSCRIÇÕES
+    2.1. Um ambiente onde ficassem listadas todas as inscrições - tabela com possibilidade de baixar em excel
+    2.2. Também poder gerar a ficha da inscrição
+    2.3. Pode editar
+
+3. INSCRITO GERENCIAR SUUA INSCRIÇÃO
+    3.1. Dentro do período de inscrições, o usuário poderia editar as informações
+
+
