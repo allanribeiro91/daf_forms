@@ -1,0 +1,52 @@
+.card__container {
+    display: grid;
+    width: 95%;
+    grid-template-columns: 7% 50% 40%;
+    background-color: #f3f3f3;
+    padding: 20px;
+    padding-left: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+  
+.card__container:hover {
+    transform: scale(1.02);
+    background-color: #d0d0d0;
+}
+
+.card__container__imagem {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card__container__info {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+}
+  
+.card__container__info__detalhe {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card__container__botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2vw;
+}
+
+
+.card__container__botao {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }

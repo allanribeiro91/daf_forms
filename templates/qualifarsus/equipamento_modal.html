@@ -1,0 +1,89 @@
+<!-- Modal -->
+<div class="modal fade" id="modalEquipamento">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 1000px; width: auto;">
+        <div class="modal-content" >
+        <div class="modal-header">
+            <h1 class="modal-title fs-5">Equipamento ou Material Permanente(s)</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="form-floating mb-3" style="width: 8%">
+                    <input type="text" id="id_equipamento" name="id_equipamento" class="form-control"  readonly>
+                    <label>ID</label>
+                </div>
+
+                <div class="form-floating mb-3" style="width: 100%">
+                    <select id="equipamento" name="equipamento" class="form-select">
+                        <option selected>Selecione um equipamento...</option>
+                        {% for equipamento in lista_itens %}
+                            <option value="{{ equipamento }}">{{ equipamento }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="equipamento">Equipamento</label>
+                </div>
+
+                <div class="form-floating mb-3" style="display: flex; width:auto">
+                    <input type="text" class="form-control" id="classificacao" placeholder="Classificação" readonly>
+                    <label for="classificacao">Classificação</label>
+                </div>
+
+            </div>
+
+            <!--Categorias dos itens-->
+            <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <div class="form-floating mb-3" style="width: 100%">
+                    <select id="ambiente" name="ambiente" class="form-select" disabled>
+                        <option selected>Selecione um ambiente...</option>
+                    </select>
+                    <label for="ambiente">Ambiente</label>
+                </div>
+            </div>
+
+            <div style="width: 100%;">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="unidade-funcional" placeholder="Unidade Funcional / Unidade" readonly>
+                    <label for="unidade-funcional">Unidade Funcional / Unidade</label>
+                </div>
+            </div>
+
+            <div style="display: flex; width:100%; align-items: center; gap: 15px; flex-wrap: wrap;">
+                <div class="form-floating mb-3" style="display: flex; width:49%" >
+                    <input type="text" class="form-control" id="atividade" placeholder="Atividade" readonly>
+                    <label for="atividade">Atividade</label>
+                </div> 
+                <div class="form-floating mb-3" style="display: flex; width:49%">
+                    <input type="text" class="form-control" id="classificacao" placeholder="Classificação" readonly>
+                    <label for="classificacao">Classificação</label>
+                </div>
+
+        </div>
+
+            
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="form-floating mb-3">
+                    <input type="text" id="valor_unitario" name="valor_unitario" class="form-control" style="text-align: right;" maxlength="12">
+                    <label>Valor Unitário R$</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" id="quantidade" name="quantidade" class="form-control"  style="text-align: right;" maxlength="9">
+                    <label>Quantidade</label>
+                </div>
+
+                <div class="form-floating mb-3" style="width: 90%">
+                    <input type="text" id="valor_total" name="valor_total" class="form-control" style="text-align: right;" maxlength="12" disabled readonly >
+                    <label>Valor Total R$</label>
+                </div>   
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-outline-danger"  id="deleteEquipamento" data-bs-dismiss="modal">Excluir</button>
+            <button type="button" class="btn btn-outline-primary" id="saveEquipamento" data-bs-dismiss="modal">Salvar</button>
+        </div>
+        </div>
+    </div>
+</div>
